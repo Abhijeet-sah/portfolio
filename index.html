@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABHIJEET SAH | Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<a href="https://wa.me/8651176984" class="whatsapp-float" target="_blank">
+    💬
+</a>
+<body>
+
+<nav>
+    <button id="theme-toggle">🌙</button>
+    <h2 class="logo">ABHIJEET SAH</h2>
+    <div class="bar"><span data-width="90%"></span></div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <div class="hero-content">
+        <img src="images/profile.jpeg" alt="Your Photo" class="profile-img">
+        <h1>Hi, I'm <span id="typing"></span></h1>
+        <p>Web Developer | CSE Student | Data Science Enthusiast</p>
+        <a href="resume.pdf" download class="btn">Download Resume</a>
+    </div>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science student with skills in Java, Python, SQL, and data science. I have worked on projects like fraud detection and customer churn prediction during my internship. My goal is to use my technical skills to build useful software and grow my career in software development and data science.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="bar"><span style="width: 90%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="bar"><span style="width: 85%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>Java</p>
+        <div class="bar"><span style="width: 80%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="bar"><span style="width: 75%"></span></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+    <img src="images/project1.jpeg" alt="Project Image">
+    <h3>ONLINE BANKING MANAGEMENT SYSTEM</h3>
+    <p>Web based system.</p>
+    <a href="https://github.com/Abhijeet-sah/Online-Banking" target="_blank">View Project</a>
+</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-info">
+        <p><strong>Phone:</strong>+91-8651176984</p>
+        <p><strong>Email:</strong> manishsinghaniya402@gmail.com</p>
+        <p><strong>LinkedIn:</strong> https://www.linkedin.com/in/abhijeet-sah-1a48602ab/</p>
+        <p><strong>GitHub:</strong> https://github.com/Abhijeet-sah</p>
+    </div>
+
+    <form action="https://formsubmit.co/yourmail@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+</section>
+
+<footer>
+    <p>© 2026 Your Name | All Rights Reserved</p>
+</footer>
+<script>
+const skills = document.querySelectorAll(".bar span");
+
+window.addEventListener("scroll", () => {
+    skills.forEach(skill => {
+        const position = skill.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+
+        if(position < screen){
+            skill.style.width = skill.getAttribute("data-width");
+        }
+    });
+});
+</script>
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+});
+</script>
+<script>
+const text = ["Abhijeet Sah", "Web Developer", "CSE Student"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+    if(count === text.length){
+        count = 0;
+    }
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("typing").textContent = letter;
+
+    if(letter.length === currentText.length){
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+    } else {
+        setTimeout(type, 100);
+    }
+})();
+</script>
+</body>
+</html>
+</body>
+</html>
